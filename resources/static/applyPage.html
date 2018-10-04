@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VR卓越工作室官网</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="./layui-v2.4.3/layui-v2.4.3/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="./css/demo.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="./css/applyPage.css">
+		<script src="./js/common.js"></script>
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./layui-v2.4.3/layui-v2.4.3/layui/layui.all.js"></script>
+		<script src="./js/applyPage.js"></script>
+	</head>
+	<body>
+		<div id="top">
+			<ul class="layui-nav" id="top_ul">
+			  <li class="logo">
+			  	<img src="img/logo.jpg"/>
+			  </li>
+			  <li  class="logo" style="cursor: default;color: rgb(255,255,255);font-size: 15px;">
+			    VR卓越工作室
+			  </li>
+			  <li class="layui-nav-item" id="adminLogin">
+			    <a href="#" onclick="showAdminLoginText()">管理员登录</a>
+			  </li>
+			  <li class="layui-nav-item" id="login">
+			    <a href="#" onclick="showLoginText()">登录</a>
+			  </li>
+			</ul>
+			
+			<ul class="layui-nav" id="top_ul1">
+			  <li class="logo">
+			  	<img src="img/logo.jpg" style="height: 50%;display: inline;"/>
+			  </li>
+			  <li  class="logo">
+			  	VR卓越工作室
+			  </li>
+			  <li class="layui-nav-item" id="isLogin">
+			    <a href="javascript:;" id="userName">1136095239@qq.com</a>
+			    <dl class="layui-nav-child">
+			      <dd><a href="javascript:;"onclick="out()">退出</a></dd>
+			    </dl>
+			  </li>
+			</ul>
+		</div>
+		<ul class="layui-nav layui-bg-black" lay-filter="">
+			<li class="layui-nav-item layui-this navigation">
+				<a href="#">首页</a>
+			</li>
+			<li class="layui-nav-item navigation">
+				<a href="#">关于我们</a>
+			</li>
+			<li class="layui-nav-item navigation">
+				<a href="#">加入我们</a>
+			</li>
+			<li class="layui-nav-item navigation">
+				<a href="#">意见反馈</a>
+			</li>
+		</ul>
+		<div id="iframe">
+			<div class="satic-area" id="down_div">
+				<div class="dynamic-area1"></div>
+				<div class="dynamic-area2"></div>
+			</div>
+			<iframe src="firstPage.html" frameborder="0"></iframe>
+		</div>
+		
+		<div id="loginBox">
+		    <div class="login-item"><input  type="text" id="InputUsername" placeholder="请输入学号" /></div>
+		    <div class="login-item"><input  type="password" id="InputUserPwd" placeholder="请输入密码"/></div>
+		    <div class="login-item"><a onclick="login()"  href="#">登录</a></div>
+		    <div id="changePwd"><a onclick="showChangePwdText()"  href="#">修改密码</a></div>
+		</div>
+		<div id="loginAdminBox">
+		    <div class="login-item"><input  type="text" id="inputAdminName" placeholder="请输入管理员名" /></div>
+		    <div class="login-item"><input  type="password" id="inputAdminPwd" placeholder="请输入密码"/></div>
+		    <div class="login-item"><a onclick="adminLogin()"  href="#">登录</a></div>
+		</div>
+		<div id="changePwdBox">
+		    <div class="login-item"><input  type="text" id="InputSignUsername" placeholder="请输入学号" /></div>
+		    <div class="login-item"><input  type="password" id="InputSignUserPwd" placeholder="请输入密码"/></div>
+		    <div class="login-item"><input  type="password" id="InputSign2UserPwd" placeholder="请输入新的密码"/></div>
+		    <div class="login-item"><a href="#"  onclick="sign()">修改</a></div>
+		</div>
+	</body>
+</html>

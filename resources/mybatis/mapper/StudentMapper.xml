@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.website.dao.StudentDao">
+
+    <resultMap id="BaseResultMap" type="com.zy.website.pojo.Student" >
+        <result column="studName" property="studName" jdbcType="VARCHAR" />
+        <result column="studNum" property="studNum" jdbcType="VARCHAR" />
+        <result column="className" property="className" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="VARCHAR" />
+    </resultMap>
+    <!--通过学号查学生状态-->
+    <select id="getStatusByStudNum" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select status from student where studNum = #{studNum}
+    </select>
+
+    <!--通过状态查学生全部信息-->
+    <select id="getStudentByStatus" parameterType="java.lang.Integer" resultType="com.zy.website.pojo.Student">
+        select * from student where status = #{status}
+    </select>
+
+    <!--通过学生的学号 状态 去修改学生的状态-->
+    <update id="updateStatusByStudNum" parameterType="Map">
+        update student set status  = #{status} where studNum = #{studNum}
+    </update>
+
+    <update id="updateStudent" parameterType="com.zy.website.pojo.Student">
+        update student set studName = #{studName} ,className = #{className},email = #{email},status = #{status}
+        where studNum = #{studNum}
+    </update>
+
+    <!--通过studNum 插入一个student-->
+    <insert id="insertStudent" parameterType="com.zy.website.pojo.Student">
+        insert into student(studName , studNum , className , email , status) value (#{studName},#{studNum},#{className},#{email},#{status})
+    </insert>
+
+    <!--通过studNum 去获取 student信息-->
+    <select id="getStudentByStudNum" parameterType="java.lang.String"  resultType="com.zy.website.pojo.Student">
+        select * from student where studNum = #{studNum}
+    </select>
+
+</mapper>

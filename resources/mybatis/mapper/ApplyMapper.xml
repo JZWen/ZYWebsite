@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.website.dao.ApplyDao">
+
+    <!--下面是数据库的字段对应java类的属性-->
+    <resultMap id="BaseResultMap" type="com.zy.website.pojo.Apply" >
+        <result column="studName" property="studName" jdbcType="VARCHAR" />
+        <result column="studNum" property="studNum" jdbcType="VARCHAR" />
+        <result column="className" property="className" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="houtai" property="houtai" jdbcType="INTEGER" />
+        <result column="qianduan" property="qianduan" jdbcType="INTEGER" />
+        <result column="jiagou" property="jiagou" jdbcType="INTEGER" />
+        <result column="yunying" property="yunying" jdbcType="INTEGER" />
+        <result column="vr" property="vr" jdbcType="INTEGER" />
+        <result column="knowDeep" property="knowDeep" jdbcType="VARCHAR" />
+        <result column="knowWe" property="knowWe" jdbcType="VARCHAR" />
+        <result column="pee" property="pee" jdbcType="VARCHAR" />
+        <result column="suggest" property="suggest" jdbcType="VARCHAR" />
+        <result column="applyTime" property="applyTime" jdbcType="DATE" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        studName , studNum , className  ,email , houtai , qianduan, jiagou, yunying, vr, knowDeep, knowWe, pee, suggest, applyTime
+    </sql>
+
+    <select id="getApplyByStudNum" parameterType="java.lang.String" resultType="com.zy.website.pojo.Apply">
+        select * from apply where studNum = #{studNum}
+    </select>
+
+    <!---->
+    <update id="updateApplyByStudNum" parameterType="com.zy.website.pojo.Apply">
+        update apply set studName = #{studName},className = #{className},email = #{email},houtai = #{houtai},qianduan = #{qianduan},jiagou = #{jiagou},yunying = #{yunying},vr = #{vr},
+        knowDeep = #{knowDeep},knowWe = #{knowWe},pee = #{pee},suggest = #{suggest},applyTime = #{applyTime} WHERE studNum = #{studNum}
+    </update>
+
+    <!--插入申请表-->
+    <insert id="insertApply" parameterType="com.zy.website.pojo.Apply">
+        insert into apply (<include refid="Base_Column_List"></include>)
+        values ( #{studName} , #{studNum} , #{className}  ,#{email} , #{houtai} , #{qianduan}, #{jiagou} , #{yunying}, #{vr}, #{knowDeep}, #{knowWe}, #{pee}, #{suggest}, #{applyTime} )
+    </insert>
+
+    <!--通过状态值获取申请表  //注意只有 管理员审核 申请表的时候才会查询这个-->
+    <select id="getApplyByStatus" parameterType="java.lang.Integer" resultType="com.zy.website.pojo.Apply">
+	select a.studNum , a.applyTime ,a.className ,a.email,a.houtai,a.jiagou,a.knowDeep,a.knowWe,a.pee,a.qianduan,a.studName,
+	a.suggest,a.vr,a.yunying from student s , apply a where a.studNum = s.studNum and s.status = #{status}
+    </select>
+</mapper>

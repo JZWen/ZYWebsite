@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.website.dao.SuggestDao">
+    <resultMap id="BaseResultMap" type="com.zy.website.pojo.Suggest" >
+        <result column="suggestTitle" property="suggestTitle" jdbcType="VARCHAR" />
+        <result column="studNum" property="studNum" jdbcType="VARCHAR" />
+        <result column="suggestContext" property="suggestContext" jdbcType="VARCHAR" />
+        <result column="suggestTime" property="suggestTime" jdbcType="DOUBLE" />
+    </resultMap>
+    <insert id="insertSuggest" parameterType="com.zy.website.pojo.Suggest">
+      insert into suggest( suggestTitle , studNum , suggestContext , suggestTime)
+      values ( #{suggestTitle} , #{studNum} , #{suggestContext} , #{suggestTime})
+    </insert>
+
+    <select id="getSuggest" resultType="com.zy.website.pojo.Suggest">
+        select * from suggest
+    </select>
+
+    <delete id="deleteSuggestByTime" parameterType="java.lang.Double" >
+        delete  FROM suggest where suggestTime = #{suggestTime}
+    </delete>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.website.dao.ApplyTimeDao" >
+    <resultMap id="BaseResultMap" type="com.zy.website.pojo.ApplyTime" >
+        <result column="adminName" property="adminName" jdbcType="VARCHAR" />
+        <result column="alterTime" property="alterTime" jdbcType="DOUBLE" />
+        <result column="beforeTime" property="beforeTime" jdbcType="DOUBLE" />
+        <result column="afterTime" property="afterTime" jdbcType="DOUBLE" />
+    </resultMap>
+
+    <!--修改时间 设置时间-->
+    <delete id="deleteApplyTime" >
+        delete from applytime
+    </delete>
+
+    <insert id="insertApplyTime" parameterType="com.zy.website.pojo.ApplyTime">
+        insert into applytime (adminName , alterTime , beforeTime , afterTime)
+        values ( #{adminName} , #{alterTime} , #{beforeTime} , #{afterTime} )
+    </insert>
+    <select id="getApplyTime" resultType="com.zy.website.pojo.ApplyTime">
+        select * from applytime limit 1;
+    </select>
+</mapper>

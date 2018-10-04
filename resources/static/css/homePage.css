@@ -1,0 +1,172 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+html{
+	display: none;
+	height:100%;	/*让html的高度等于屏幕高度*/
+}
+body{
+	height:100%;
+	width: 100%;
+	margin:0px;
+	font-family: "微软雅黑";
+}
+#left{
+	background-color: rgb(57,61,73);
+	height: 100%;width: 154px;
+	float: left;
+	min-height: 700px;
+}
+#right{
+	position: relative;
+	height: 100%;
+	float: right;
+}
+#left_top{
+	width: 153.6px;height: 8%;
+}
+#left_bottom{
+	width: 153.6px;height: 53%;
+}
+#navigation{
+	width: 100%;height: 100%;
+	list-style-type: none;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+}
+div{
+	overflow: hidden;
+}
+.navigation_arrow{
+	width: 15.36px;height: 100%;
+	float: left;
+	color: rgb(240,241,242);
+	padding-top: 3px;
+}
+.navigation_img{
+	width: 30.72px;height: 100%;
+	float: left;
+	color: rgb(184,187,194);
+}
+.navigation_img img{
+	margin-bottom: 10px;
+}
+.navigation_word{
+	width: 107.52px;height: 100%;
+	float: left;
+	font-size:15px ;
+	color: rgb(143,161,191);
+	padding-top: 3px;
+}
+.li_div{
+	height: 10%;width: 153.6px;
+	text-align: center;
+	background-color: rgb(57,61,73);
+}
+.li_div:hover{
+	background-color: rgb(70,80,90);
+}
+#nowTime{
+	width: 153.6px;height: 20%;
+	font-size: 10px;
+	color: rgb(131,144,162);
+	text-align: left;
+}
+.img{
+	width: 25px;height: 25px;margin-top: 9px;
+}
+#adminName{
+	cursor: default;
+	font-size: 18px;
+}
+.tableExcel{
+	cursor: default;
+	margin:0px;
+    position: absolute;
+    z-index: 10;
+    table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+}
+.MHover{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.box{
+	position: fixed;
+	bottom: 0px;
+	z-index: 20;
+	background: rgb(255,255,255,1);
+}
+.changeTime{
+	width: 100%;height: 5%;
+	min-width: 960px;
+	min-height: 30px;
+}
+.changeTime input{
+	height: 100%; 
+	background-color: rgb(242,242,242);
+	border: 0px;
+}
+.changeTime a{
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin-left: 0px;
+	color: rgb(108,151,191);
+}
+.changeTime a:hover{
+	color:white;
+	background-color: rgb(33,179,231);
+}
+.right_div{
+	width: 100%;height: 100%;
+}
+.applyExcel{
+	width: 100%;height: 87%;
+}
+.memberReception,.memberRefuse{
+	cursor: pointer;
+}
+.memberReception:hover{
+	color: white;
+	background-color: rgb(30,159,255);
+}
+.memberRefuse:hover{
+	color: white;
+	background-color: red;
+}
+#boxWE{
+	background-color: red;
+}
+.addNotice-item input{
+    width:350px;
+    height:40px;
+}
+textarea{
+	width:350px;
+	height: 200px;
+}
+.addNotice-item a{
+    width:350px;
+    height:50px;
+    background:rgb(30,159,255);
+    display:block;
+    font-size:16px;
+    color:#fff;
+    line-height:50px;
+    text-align:center;
+    display:block;
+    text-decoration:none;
+}
+.addNotice-item{
+    margin-top:15px;
+    margin-left:20px;
+}
+#refresh_div{
+	padding-top: 5px;
+	height: 100%;
+	cursor: pointer;
+	float: right;
+}

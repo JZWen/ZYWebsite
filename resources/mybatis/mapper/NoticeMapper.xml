@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.website.dao.NoticeDao">
+    <resultMap id="BaseResultMap" type="com.zy.website.pojo.Notice" >
+        <result column="adminName" property="studName" jdbcType="VARCHAR" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="context" property="context" jdbcType="VARCHAR" />
+        <result column="publicTime" property="publicTime" jdbcType="DOUBLE" />
+    </resultMap>
+
+    <insert id="insertNotice" parameterType="com.zy.website.pojo.Notice">
+        insert into notice (adminName , title , context , publicTime)
+        value (#{adminName},#{title},#{context},#{publicTime})
+    </insert>
+
+    <!--根据publicTime 去删除-->
+    <delete id="deleteNotice" parameterType="java.lang.Double">
+      delete  from  notice where  publicTime = #{publicTime}
+    </delete>
+
+    <!--查询公告-->
+    <select id="getNotice" resultType="com.zy.website.pojo.Notice">
+        select * from  notice
+    </select>
+
+    <select id="getNoticeTop5" resultType="com.zy.website.pojo.Notice" >
+       select * from notice ORDER BY
+	    publicTime DESC  LIMIT 0 ,5
+    </select>
+</mapper>

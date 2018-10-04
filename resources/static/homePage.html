@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>VR卓越工作室后台管理</title>
+		<link rel="stylesheet" type="text/css" href="./layui-v2.4.3/layui-v2.4.3/layui/css/layui.css">
+		<script src="./js/common.js"></script>
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<script src="./layui-v2.4.3/layui-v2.4.3/layui/layui.all.js"></script>
+		<script src="js/paging.js"></script>
+		<script src="./js/homePage.js" type="text/javascript" ></script>
+		<link rel="stylesheet" href="css/paging.css">
+		<link rel="stylesheet" type="text/css" href="./css/homePage.css"/>
+	</head>
+	<body id="body1">
+		<div id="left">
+			<div id="left_top">
+				<img src="img/logo.jpg" style="width: 20%;"/>
+				<span id="adminName">
+					adminName
+				</span>
+			</div>
+			<div id="left_bottom">
+				<div class="li_div" id="one_div" onclick="one_div()">
+					<a href="#" id="one_a">
+					<div class="navigation_img a_div" id="get"><img src="./img/apply.png" class="img"/></div>
+					<div class="navigation_word a_div">申请审核</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<div class="li_div" id="two_div" onclick="two_div()">
+					<a href="#" id="two_a">
+					<div class="navigation_img a_div"><img src="./img/review.png"/ class="img"></div>
+					<div class="navigation_word a_div">笔试审核</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<div class="li_div" id="three_div" onclick="three_div()">
+					<a href="#" id="three_a">
+					<div class="navigation_img a_div"><img src="./img/interview.png" class="img"/></div>
+					<div class="navigation_word a_div">面试审核</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<div class="li_div" id="four_div" onclick="four_div()">
+					<a href="#" id="four_a">
+					<div class="navigation_img a_div"><img src="./img/notice.png" class="img"/></div>
+					<div class="navigation_word a_div">所有公告</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<div class="li_div"  onclick="five_div()">
+					<a href="#" id="five_a">
+					<div class="navigation_img a_div"><img src="./img/feedback.png" class="img"/></div>
+					<div class="navigation_word a_div">意见反馈</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<div class="li_div"  onclick="six_div()">
+					<a href="#" id="six_a">
+					<div class="navigation_img a_div"><img src="./img/member.png" class="img"/></div>
+					<div class="navigation_word a_div">正式成员</div>
+					<div class="navigation_arrow a_div">></div>
+					</a>
+				</div>
+				<!--<div class="li_div">-->
+					<!--<a href="#" id="seven_a">-->
+					<!--<div class="navigation_img a_div"><img src="./img/8.png" class="img"/></div>-->
+					<!--<div class="navigation_word a_div">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+					<!--<div class="navigation_arrow a_div">></div>-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="li_div">-->
+					<!--<a href="#" id="eight_a">-->
+					<!--<div class="navigation_img a_div"><img src="./img/9.png" class="img"/></div>-->
+					<!--<div class="navigation_word a_div">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+					<!--<div class="navigation_arrow a_div">></div>-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="li_div">-->
+					<!--<a href="#" id="nine_a">-->
+					<!--<div class="navigation_img a_div"><img src="./img/10.png" class="img"/></div>-->
+					<!--<div class="navigation_word a_div">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+					<!--<div class="navigation_arrow a_div">></div>-->
+					<!--</a>-->
+				<!--</div>-->
+				<!--<div class="li_div">-->
+					<!--<a href="#" id="ten_a">-->
+					<!--<div class="navigation_img a_div"><img src="./img/11.png" class="img"/></div>-->
+					<!--<div class="navigation_word a_div">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+					<!--<div class="navigation_arrow a_div">></div>-->
+					<!--</a>-->
+				<!--</div>-->
+			</div>
+		</div>
+		<div id="right">
+			<div id="applyForApproval" class="right_div">
+				<div class="changeTime">
+					申请表提交开始时间：<input type="date" id="beginTime" disabled="disabled"/>
+					申请表提交结束时间：<input type="date" id="endTime" disabled="disabled"/>
+					<a onclick="changeTime()"  href="#">更改时间</a>
+					<a onclick="cancelChange()"  href="#">取消</a>
+					<a onclick="subTime()"  href="#">提交</a>
+					<div id="refresh_div" onclick="refresh_div();"><img src="img/refresh.png" title="刷新" style="height: 100%;width: 100%;"/></div>
+				</div>
+				<div class="applyExcel">
+					<table class="layui-table tableExcel" lay-size="sm">
+					  <colgroup>	
+					    
+					  </colgroup>
+					  <thead>
+					    <tr>
+					      <th>序号</th>
+					      <th>姓名</th>
+					      <th>班级</th>
+					      <th>学号</th>
+					      <th>邮箱</th>
+					      <th>兴趣方向</th>
+					      <th>技术了解</th>
+					      <th>工作室了解</th>
+					      <th>考研意向</th>
+					      <th>建议</th>
+					      <th>申请时间</th>
+					      <th>接受</th>
+					      <th>拒绝</th>
+					    </tr> 
+					  </thead>
+					  <tbody id="applyExceltbody">
+					  </tbody>
+					</table>	
+				</div>
+			</div>
+			<div id="wEForApproval" class="right_div" style="display: none;">
+				<div class="applyExcel">
+					<table class="layui-table tableExcel" lay-size="sm">
+					  <colgroup>	
+					    
+					  </colgroup>
+					  <thead>
+					    <tr>
+					      <th>序号</th>
+					      <th>姓名</th>
+					      <th>班级</th>
+					      <th>学号</th>
+					      <th>邮箱</th>
+					      <th>接受</th>
+					      <th>拒绝</th>
+					    </tr> 
+					  </thead>
+					  <tbody id="wEtbody">
+					  </tbody>
+					</table>	
+				</div>
+			</div>
+			<div id="InterviewApproval" class="right_div"  style="display: none;">
+				<div class="applyExcel">
+					<table class="layui-table tableExcel" lay-size="sm">
+					  <colgroup>	
+					    
+					  </colgroup>
+					  <thead>
+					    <tr>
+					      <th>序号</th>
+					      <th>姓名</th>
+					      <th>班级</th>
+					      <th>学号</th>
+					      <th>邮箱</th>
+					      <th>接受</th>
+					      <th>拒绝</th>
+					    </tr> 
+					  </thead>
+					  <tbody id="interviewtbody">
+					  </tbody>
+					</table>	
+				</div>
+			</div>
+			<div id="allNotice" class="right_div"  style="display: none;">
+				<div class="changeTime">
+					<div id="refresh_div" onclick="addNotice()"><img src="img/addNotice.png" title="添加"/></div>
+				</div>
+				<div class="applyExcel">
+					<div class="layui-collapse" id="noticeExcel"></div>
+				</div>
+			</div>
+			<div id="allFeedback" class="right_div"  style="display: none;">
+				<div class="applyExcel">
+					<div class="layui-collapse" id="FeedbackExcel"></div>
+				</div>
+			</div>
+			<div id="allMember" class="right_div"  style="display: none;">
+				<div class="applyExcel">
+					<table class="layui-table tableExcel" lay-size="sm">
+					  <colgroup>	
+					    
+					  </colgroup>
+					  <thead>
+					    <tr>
+					      <th>序号</th>
+					      <th>姓名</th>
+					      <th>班级</th>
+					      <th>学号</th>
+					      <th>邮箱</th>
+					      <th>删除</th>
+					    </tr> 
+					  </thead>
+					  <tbody id="allMembertbody">
+					  </tbody>
+					</table>	
+				</div>
+			</div>
+			<div class="box" id="boxApply"></div>
+			<div id="addNotice" style="display: none;">
+			    <div class="addNotice-item"><input  type="text" id="title" placeholder="标题" /></div><br />
+			    <div class="addNotice-item"><textarea name="" rows="" cols="" placeholder="正文"></textarea></div>
+			    <div class="addNotice-item"><a onclick="subNotice()"  href="#">提交</a></div>
+			</div>
+		</div>
+	</body>
+</html>
