@@ -6,94 +6,95 @@
 <script src="./js/common.js"></script>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script src="./layui-v2.4.3/layui-v2.4.3/layui/layui.all.js"></script>
-<script src="./js/joinUs.js"></script>	
-</script>
+<script src="./js/joinUs.js"></script>
+<body>
 <div id="frist_q">
     <div class="frist_q">
-    	<span class="span1">姓名：</span>
-    	<input  type="text" id="name"/>
+    <span class="span1">姓名：</span>
+<input  type="text" id="name"/>
     </div>
     <div class="frist_q">
-    	<span class="span1">班级：</span>
-    	<input  type="text" id="youClass"/>
+    <span class="span1">班级：</span>
+<input  type="text" id="youClass"/>
     </div>
     <div class="frist_q">
-    	<span class="span1">邮箱：</span>
-    	<input  type="text" id="email"/>
+    <span class="span1">邮箱：</span>
+<input  type="text" id="email"/>
     </div>
     <div class="frist_q" class="a">
-    	<a onclick="frist_next()"  href="#">next</a>
+    <a onclick="frist_next()"  href="#">next</a>
     </div>
-</div>
+    </div>
 
-<div id="second_q">
+    <div id="second_q">
     <div class="second_q">
-    	<span class="span2">你感兴趣的技术？</span><br />
-    	<label for="A"><input type="checkbox" name="tec" value="前端" id="A"/>前端</label>
-    	<label for="B"><input type="checkbox" name="tec" value="后端" id="B"/>后端</label>
-    	<label for="C"><input type="checkbox" name="tec" value="架构" id="C"/>架构</label>
-    	<label for="D"><input type="checkbox" name="tec" value="运营" id="D"/>运营</label>
-    	<label for="E"><input type="checkbox" name="tec" value="VR与AR" id="E"/>VR与AR</label>
+    <span class="span2">你感兴趣的技术？</span><br />
+<label for="A"><input type="checkbox" name="tec" value="前端" id="A"/>前端</label>
+    <label for="B"><input type="checkbox" name="tec" value="后端" id="B"/>后端</label>
+    <label for="C"><input type="checkbox" name="tec" value="架构" id="C"/>架构</label>
+    <label for="D"><input type="checkbox" name="tec" value="运营" id="D"/>运营</label>
+    <label for="E"><input type="checkbox" name="tec" value="VR与AR" id="E"/>VR与AR</label>
     </div>
     <div class="second_q">
-    	<span class="span2">你对各方向的技术都了解吗？</span><br />
-    	<label for="F"><input type="radio" name="know" value="都了解" id="F"/>都了解</label>
-    	<label for="G"><input type="radio" name="know" value="对部分有了解" id="G"/>对部分有了解</label>
-    	<label for="H"><input type="radio" name="know" value="不了解" id="H"/>不了解</label>
+    <span class="span2">你对各方向的技术都了解吗？</span><br />
+<label for="F"><input type="radio" name="know" value="都了解" id="F"/>都了解</label>
+    <label for="G"><input type="radio" name="know" value="对部分有了解" id="G"/>对部分有了解</label>
+    <label for="H"><input type="radio" name="know" value="不了解" id="H"/>不了解</label>
     </div>
     <div class="second_q">
-    	<span class="span2">你了解工作室吗？</span><br />
-    	<label for="I"><input type="radio" name="knowWe" value="很了解" id="I"/>很了解</label>
-    	<label for="J"><input type="radio" name="knowWe" value="不是很了解，听说过" id="J"/>不是很了解，听说过</label>
-    	<label for="K"><input type="radio" name="knowWe" value="一点不了解" id="K"/>一点不了解</label>
+    <span class="span2">你了解工作室吗？</span><br />
+<label for="I"><input type="radio" name="knowWe" value="很了解" id="I"/>很了解</label>
+    <label for="J"><input type="radio" name="knowWe" value="不是很了解，听说过" id="J"/>不是很了解，听说过</label>
+<label for="K"><input type="radio" name="knowWe" value="一点不了解" id="K"/>一点不了解</label>
     </div>
     <div class="second_q">
-    	<span class="span2">对考研的想法？</span><br />
-    	<label for="L"><input type="radio" name="pee" value="不想考" id="L"/>不想考</label>
-    	<label for="M"><input type="radio" name="pee" value="不清楚" id="M"/>不清楚</label>
-    	<label for="N"><input type="radio" name="pee" value="很想考" id="N"/>很想考</label>
+    <span class="span2">对考研的想法？</span><br />
+<label for="L"><input type="radio" name="pee" value="不想考" id="L"/>不想考</label>
+    <label for="M"><input type="radio" name="pee" value="不清楚" id="M"/>不清楚</label>
+    <label for="N"><input type="radio" name="pee" value="很想考" id="N"/>很想考</label>
     </div>
     <div class="second_q">
-    	<a onclick="second_next()"  href="#">next</a>
+    <a onclick="second_next()"  href="#">next</a>
     </div>
-</div>
+    </div>
 
-<div id="sub_q">
+    <div id="sub_q">
     <div class="sub_q">
-    	<span class="span3">对于工作室以后怎么培养你，你有什么建议？</span><br />
+    <span class="span3">对于工作室以后怎么培养你，你有什么建议？</span><br />
+</div>
+<div class="sub_q">
+    <textarea name="youSuggest" rows="5" cols="40" placeholder="请输入你的建议,若无建议请输入无" id="textArea"></textarea>
     </div>
     <div class="sub_q">
-    	<textarea name="youSuggest" rows="5" cols="40" placeholder="请输入你的建议,若无建议请输入无" id="textArea"></textarea>
+    <a onclick="sub_next()"  href="#">sub</a>
     </div>
-    <div class="sub_q">
-    	<a onclick="sub_next()"  href="#">sub</a>
     </div>
-</div>
 
 
-<div id="sop">
-	<div class="stepInfo">
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
-		<div class="stepIco stepIco1" id="create">1
-			<div class="stepText" id="createText">注册登录</div>
-		</div>
-		<div class="stepIco stepIco2" id="check">2
-			<div class="stepText" id="checkText">提交申请</div>
-		</div>
-		<div class="stepIco stepIco3" id="produce">3
-			<div class="stepText" id="produceText">申请通过</div>
-		</div>
-		<div class="stepIco stepIco4" id="delivery">4
-			<div class="stepText" id="deliveryText">笔试通过</div>
-		</div>
-		<div class="stepIco stepIco5" id="received">5
-			<div class="stepText" id="receivedText">面试通过</div>
-		</div>
-		<div class="stepIco stepIco6" id="formal">6
-			<div class="stepText" id="formalText">正式成员</div>
-		</div>
-	</div>
-</div>
+    <div id="sop">
+    <div class="stepInfo">
+    <ul>
+    <li></li>
+    <li></li>
+    </ul>
+    <div class="stepIco stepIco1" id="create">1
+    <div class="stepText" id="createText">注册登录</div>
+    </div>
+    <div class="stepIco stepIco2" id="check">2
+    <div class="stepText" id="checkText">提交申请</div>
+    </div>
+    <div class="stepIco stepIco3" id="produce">3
+    <div class="stepText" id="produceText">申请通过</div>
+    </div>
+    <div class="stepIco stepIco4" id="delivery">4
+    <div class="stepText" id="deliveryText">笔试通过</div>
+    </div>
+    <div class="stepIco stepIco5" id="received">5
+    <div class="stepText" id="receivedText">面试通过</div>
+    </div>
+    <div class="stepIco stepIco6" id="formal">6
+    <div class="stepText" id="formalText">正式成员</div>
+    </div>
+    </div>
+    </div>
+</body>
